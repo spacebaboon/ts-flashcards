@@ -13,7 +13,7 @@ context("Homepage", () => {
     })
   });
   it('links to add new card when clicked', () => {
-    cy.get('header').findByText('+ New Card').closest('a').click();
+    cy.get('header').findByText('New Card').closest('a').click();
     cy.url().should('eq', 'http://localhost:3000/new');
   })
 });
