@@ -1,10 +1,11 @@
 import React from 'react';
-import { Header } from '../common/Header';
+import { Header } from './common/Header';
 import { Home } from './Home';
 import { NewCard } from './NewCard';
 import { createGlobalStyle } from 'styled-components';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container } from '@material-ui/core';
+import { StylesProvider } from '@material-ui/core/styles';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -14,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
     return (
-        <React.Fragment>
+        <StylesProvider injectFirst>
             <GlobalStyle />
             <Router>
                 <Header />
@@ -29,7 +30,7 @@ function App() {
                     </Switch>
                 </Container>
             </Router>
-        </React.Fragment>
+        </StylesProvider>
     );
 }
 

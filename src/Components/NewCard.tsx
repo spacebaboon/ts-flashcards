@@ -1,4 +1,5 @@
 import { TextField } from '@material-ui/core';
+import Button from './common/Button';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -17,9 +18,21 @@ export const NewCard = () => {
         <React.Fragment>
             <h1>Add New Card</h1>
             <form onSubmit={onSubmit} noValidate autoComplete="off">
-                <TextField id="german" label="German" />
-                <TextField id="english" label="English" />
-                <input type="submit" value="Save" />
+                <div>
+                    <TextField id="german" label="German" inputRef={register} />
+                </div>
+                <div>
+                    <TextField
+                        id="english"
+                        label="English"
+                        inputRef={register}
+                    />
+                </div>
+                <div>
+                    <Button variant="outlined" color="primary" type="submit">
+                        Save
+                    </Button>
+                </div>
             </form>
         </React.Fragment>
     );

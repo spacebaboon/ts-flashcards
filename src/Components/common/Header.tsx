@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -13,10 +14,10 @@ const StyledHeader = styled.header`
 export const Header = () => (
     <StyledHeader>
         <span>
-            <a href="/">Flash Cards</a>
+            <Link to="/">Flash Cards</Link>
         </span>
         <span>
-            <a href="/new">New Card</a>
+            <Link to="/new">New Card</Link>
         </span>
     </StyledHeader>
 );
