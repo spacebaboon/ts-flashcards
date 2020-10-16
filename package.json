@@ -1,49 +1,65 @@
 {
-  "name": "flashcards",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-hook-form": "^6.9.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
-    "styled-components": "^5.2.0",
-    "typescript": "^4.0.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@testing-library/cypress": "^7.0.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^26.0.14",
-    "@types/node": "^14.11.8",
-    "@types/react": "^16.9.52",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-router-dom": "^5.1.6",
-    "@types/styled-components": "^5.1.3",
-    "cypress": "5.4.0",
-    "eslint-plugin-cypress": "^2.11.2"
-  }
+    "name": "flashcards",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@material-ui/core": "^4.11.0",
+        "fontsource-roboto": "^3.0.3",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-hook-form": "^6.9.2",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.3",
+        "styled-components": "^5.2.0",
+        "typescript": "^4.0.3"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "format": "prettier --write 'src/**/*.{ts,tsx,md,json}'"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,tsx?,md,json}": [
+            "prettier --write"
+        ]
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@testing-library/cypress": "^7.0.1",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "@types/jest": "^26.0.14",
+        "@types/node": "^14.11.8",
+        "@types/react": "^16.9.52",
+        "@types/react-dom": "^16.9.8",
+        "@types/react-router-dom": "^5.1.6",
+        "@types/styled-components": "^5.1.3",
+        "cypress": "5.4.0",
+        "eslint-plugin-cypress": "^2.11.2",
+        "husky": "^4.3.0",
+        "lint-staged": "^10.4.0",
+        "prettier": "^2.1.2"
+    }
 }
