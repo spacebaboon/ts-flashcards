@@ -7,7 +7,7 @@ context('Add new card', () => {
         cy.findByText('Add New Card');
     });
 
-    it('submits new card with all fields filled in', () => {
+    it.only('submits new card with all fields filled in', () => {
         cy.findByText('German').click({ force: true }).type('die Sonne');
         cy.findByText('English').click({ force: true }).type('the sun');
         cy.findByText('Save').click();
@@ -17,13 +17,9 @@ context('Add new card', () => {
 
     it('displays validation messages on submission when mandatory fields are empty', () => {
         cy.findByText('Save').click();
-        cy.findByText('German')
-            .click({ force: true })
-            .findByText('Mandatory field!');
-        cy.findByText('English')
-            .click({ force: true })
-            .findByText('Mandatory field!');
+        cy.findByText('German').parent().findByText('required');
+        cy.findByText('English').parent().findByText('required');
 
-        cy.findByText('New card saved').should('be', null);
+        cy.findByText('New card saved').should('not.exist');
     });
 });
